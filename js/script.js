@@ -59,6 +59,7 @@ var les4 = new Vue({
     data:{
         products: "schoenen",
         inventory: 2, 
+        details: ["30% leer", "70% katoen"]
     },
     methods: {
         kopen :function(min){

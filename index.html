@@ -45,6 +45,9 @@
         <p v-if="inventory > 1">Bijna uitverkocht</p> 
         <p v-else>Uitverkocht</p>
         <button v-on:click="kopen(1)">Kopen</button>
+        <ul>
+            <li v-for="detail in details">{{detail}}</li> <!--details = data:, detail = single list item-->
+        </ul>
     </div>
 </body>
 
