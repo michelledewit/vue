@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <link href="css/style.css" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+</head>
+<body>
+    <div class="vue_les1">
+        <h1>Data & Methods</h1>
+        <p>{{groetjes("middag")}}</p> <!--{{template}} prints data: key+value-->
+        <p>Naam: {{name}}</p>
+        <p>Leeftijd: {{age}}</p>
+        <a v-bind:href="website">Wit ontwerp</a> <!-- bind - attribute(src/href) - website url in data: - : = v-bind shorthand -->
+        <input type="text" v-bind:value="name">
+    </div>
+
+    <div class="vue_les2">
+        <h1>Events</h1>
+        <button v-on:click="add(1)">Plus 1</button>  <!--v-on = eventlistener-->
+        <button v-on:click.once="subtract(1)">Min 1</button>  <!--.once = event modifier - click werkt 1x-->
+        <button v-on:mouseover="add(10)">Plus 10</button> 
+        <button v-on:mouseover="subtract(10)">Min 10</button>
+        <p>Mijn leeftijd is: {{age}}</p> 
+        <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div> <!--@ = v-on shorthand -->
+        <a :href="website" v-on:click.prevent="click">Google website</a>
+    </div>
+
+    <div class="vue_les3">
+        <h1>Binding</h1>
+        <label>Name:</label>
+        <input type="text" v-model="name"> <!--user input-->  
+        <span>{{name}}</span>     <!--live output-->  
+        <label>Age:</label>
+        <input type="text" v-model="age">
+        <span>{{age}}</span>
+    </div>
+
+    <div class="vue_les4">
+        <h1>Else</h1>
+        <p>{{products}}</p>
+        <p v-if="inventory > 1">Bijna uitverkocht</p> 
+        <p v-else>Uitverkocht</p>
+        <button v-on:click="kopen(1)">Kopen</button>
+    </div>
+</body>
+
+<script src="js/script.js"></script>
+
+</html>
