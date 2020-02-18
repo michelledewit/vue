@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <link href="css/socks.css" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+</head>
+<body>
+    <div class="nav-bar"></div>
+    <div class="vue_les4">
+        <div class="product">
+            <div class="product-image">
+                <img v-bind:src="image">
+            </div>
+            <div class="product-info">
+                <h1>{{products}}</h1>
+                <p v-if="inStock">In Stock</p> <!--if inStock = true-->
+                <p v-else=>Out of stock</p> <!--if inStock = false-->
+                <ul>
+                    <li v-for="detail in details">{{detail}}</li> <!--v-for = loop over an array, details(array) = data:, detail = single array item-->
+                </ul>
+                <div v-for="variant in variants" :key="variant.variantId">
+                    <p>{{variant.variantColor}}</p>
+                </div>
+                <div class="cart">
+                    <p>Winkelwagen ({{cart}})</p>
+                    <button v-on:click="addToCart">Add to winkelwagen</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<!-- <p v-if="inventory >= 1">Bijna uitverkocht</p> 
+    <p v-else>Uitverkocht</p>
+    <button v-on:click="kopen(1)">Kopen</button> -->
+    
+    <script src="js/socks.js"></script>
+    
+    </html>

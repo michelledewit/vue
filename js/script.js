@@ -53,18 +53,3 @@ var les3 = new Vue({
         }
     }
 });
-
-var les4 = new Vue({
-    el: ".vue_les4",
-    data:{
-        products: "schoenen",
-        inventory: 2, 
-        details: ["30% leer", "70% katoen"]
-    },
-    methods: {
-        kopen :function(min){
-            this.inventory-=(min)
-            console.log(this.inventory)
-        }
-    }
-});

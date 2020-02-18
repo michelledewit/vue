@@ -13,7 +13,6 @@
         <h1>Data & Methods</h1>
         <p>{{groetjes("middag")}}</p> <!--{{template}} prints data: key+value-->
         <p>Naam: {{name}}</p>
-        <p>Leeftijd: {{age}}</p>
         <a v-bind:href="website">Wit ontwerp</a> <!-- bind - attribute(src/href) - website url in data: - : = v-bind shorthand -->
         <input type="text" v-bind:value="name">
     </div>
@@ -37,17 +36,6 @@
         <label>Age:</label>
         <input type="text" v-model="age">
         <span>{{age}}</span>
-    </div>
-
-    <div class="vue_les4">
-        <h1>Else</h1>
-        <p>{{products}}</p>
-        <p v-if="inventory > 1">Bijna uitverkocht</p> 
-        <p v-else>Uitverkocht</p>
-        <button v-on:click="kopen(1)">Kopen</button>
-        <ul>
-            <li v-for="detail in details">{{detail}}</li> <!--details = data:, detail = single list item-->
-        </ul>
     </div>
 </body>
 
